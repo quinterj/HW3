@@ -1,12 +1,9 @@
 const nav = document.getElementById('main');
 const navLinks = document.getElementById('nav-links');
-const markup =
-  `<ul>
+const markup = `<ul>
 ${navItems.map(listItem => `<li><a href="${listItem.link}">${listItem.label}</a></li>`).join('')}
 </ul>`;
 navLinks.innerHTML = markup;
-
-
 
 let topOfNav = nav.offsetTop;
 function fixNav() {
@@ -20,14 +17,12 @@ function fixNav() {
 }
 window.addEventListener('scroll', fixNav);
 
-
-
 const siteWrap = document.querySelector('.site-wrap');
 window.onload = function () {
-  window.location.hash = '#watchlist'
-}
+  window.location.hash = '#watchlist';
+};
 
-window.onhashchange = function() {
+window.onhashchange = function () {
   let newloc = window.location.hash;
   let newContent = navItems.filter(navItem => navItem.link == newloc);
   siteWrap.innerHTML = `
@@ -36,7 +31,7 @@ window.onhashchange = function() {
   <p>${newContent[0].content}</p>
   `;
   document.body.classList.remove('show');
-}
+};
 
 // window.onhashchange = function () {
 //   let newloc = window.location.hash;
@@ -53,21 +48,11 @@ if (document.documentElement.clientWidth <= 740) {
   logo.addEventListener('click', showMenu);
 }
 
-function showMenu(e){
-  if (window.matchMedia('only screen and (max-width: 740px)').matches){
+function showMenu(e) {
+  if (window.matchMedia('only screen and (max-width: 740px)').matches) {
     document.body.classList.toggle('show');
   }
   e.preventDefault();
 }
 
-
-
-
-
-
-
-
-
-
-
-
+//# sourceMappingURL=main-compiled.js.map
